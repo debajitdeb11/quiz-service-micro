@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1" author="Debajit Deb">
+        <createTable tableName="quiz_answers">
+            <column name="aid" type="INT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="answer1" type="TEXT">
+                <constraints nullable="false" />
+            </column>
+            <column name="answer2" type="TEXT">
+                <constraints nullable="false" />
+            </column>
+            <column name="answer3" type="TEXT">
+                <constraints nullable="false" />
+            </column>
+            <column name="answer4" type="TEXT">
+                <constraints nullable="false" />
+            </column>
+            <column name="right_answer" type="INT">
+                <constraints checkConstraint="right_answer BETWEEN 1 AND 4" />
+            </column>
+        </createTable>
+        <createTable tableName="quiz_questions">
+            <column name="qid" type="INT" autoIncrement="true">
+                <constraints primaryKey="true" />
+            </column>
+            <column name="question" type="TEXT" />
+            <column name="aid" type="INT" />
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
