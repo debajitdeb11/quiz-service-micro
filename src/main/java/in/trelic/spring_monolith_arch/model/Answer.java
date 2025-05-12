@@ -11,6 +11,7 @@ public class Answer {
     @Id
     @Column(name = "aid", nullable = false)
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "quiz_answers_seq", sequenceName = "quiz_answers_seq", allocationSize = 50)
     private int aId;
     @Column(name = "answer1", nullable = false)
     private String answer1;

@@ -9,7 +9,7 @@ import lombok.Setter;
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "quiz_question_sequence", initialValue = 1, allocationSize = 1)
+    @SequenceGenerator(name = "quiz_question_seq", sequenceName = "quiz_question_seq", allocationSize = 50)
     @Column(name = "qid")
     private int qId;
     @Column(name = "question", nullable = false)

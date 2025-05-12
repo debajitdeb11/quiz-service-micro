@@ -26,4 +26,8 @@ public class QuestionRequestWrapperDto {
     public void setCategoryEnum(CategoryEnum categoryEnum) {
         this.categoryEnum = categoryEnum;
     }
+
+    public void setCategoryEnum(String categoryEnum) {
+        this.categoryEnum = CategoryEnum.valueOf(categoryEnum.toUpperCase());
+    }
 }
